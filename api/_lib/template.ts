@@ -13,13 +13,13 @@ const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('ba
 
 function getCss(theme: string, fontSize: string) {
     let background = 'white';
-    let foreground = 'black';
-    let radial = 'lightgray';
+    let foreground = '#24618e';
+    let radial = 'white';
 
     if (theme === 'dark') {
-        background = 'black';
+        background = '#24618e';
         foreground = 'white';
-        radial = 'dimgray';
+        radial = '#24618e';
     }
     return `
     @font-face {
@@ -80,7 +80,7 @@ function getCss(theme: string, fontSize: string) {
     .plus {
         color: #BBB;
         font-family: Times New Roman, Verdana;
-        font-size: 100px;
+        font-size: 0;
     }
 
     .spacer {
@@ -93,13 +93,13 @@ function getCss(theme: string, fontSize: string) {
         margin: 0 .05em 0 .1em;
         vertical-align: -0.1em;
     }
-    
+
     .heading {
         font-family: 'Inter', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: ${foreground};
-        line-height: 1.8;
+        line-height: 1.3;
     }`;
 }
 
